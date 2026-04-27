@@ -1,0 +1,63 @@
+DATABASE_URL=postgresql://postgres:1234@localhost:5432/sifra_db
+# --- JWT ---
+JWT_SECRET_KEY=9xK2vL8pQmR4tY7nZ1cD5fH8jK3sW6uB0eR2tY9pLmQ
+JWT_REFRESH_SECRET=7mN4qT1zX8cV5bL2kJ9hG6fD3sA0pO7iU4yR1eW8nC
+ACCESS_TOKEN_EXPIRE_MINUTES=30
+REFRESH_TOKEN_EXPIRE_DAYS=7
+
+# --- Email (Gmail SMTP) ---
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=sifra6380@gmail.com
+SMTP_PASSWORD=djscthuisvbcdpvl
+EMAIL_FROM=sifra6380@gmail.com
+EMAIL_FROM_NAME=SIFRA
+
+# =========================
+# SIFRA FULL .env
+# Put this file in:
+# D:\sifra\sifra\.env
+# =========================
+
+
+
+# ---------- Admin ----------
+ADMIN_SECRET_KEY=sifra_admin_master_key_2026
+ADMIN_EMAIL=admin@sifra.com
+ADMIN_PASSWORD=HarshAdmin@123
+
+# ---------- Google OAuth ----------
+GOOGLE_CLIENT_ID=temp_google_id
+GOOGLE_CLIENT_SECRET=temp_google_secret
+GOOGLE_REDIRECT_URI=http://localhost:5173/auth/google/callback
+
+# ---------- Cloudinary ----------
+CLOUDINARY_CLOUD_NAME=temp_cloud
+CLOUDINARY_API_KEY=temp_key
+CLOUDINARY_API_SECRET=temp_secret
+
+# ---------- Razorpay ----------
+RAZORPAY_KEY_ID=rzp_test_placeholder
+RAZORPAY_KEY_SECRET=placeholder
+RAZORPAY_WEBHOOK_SECRET=
+
+# ---------- Redis ----------
+REDIS_URL=redis://localhost:6379/0
+
+# ---------- App ----------
+FRONTEND_URL=http://localhost:5173
+BACKEND_URL=http://localhost:8000
+ENVIRONMENT=development
+
+# ---------- Rate Limits ----------
+RATE_REGISTER=5/hour
+RATE_LOGIN=10/minute
+RATE_OTP_VERIFY=10/minute
+RATE_OTP_RESEND=3/10minute
+RATE_FORGOT_PW=5/hour
+RATE_RESET_PW=5/hour
+RATE_ADMIN_LOGIN=5/minute
+RATE_TASK_CREATE=20/hour
+RATE_APPLY=30/hour
+RATE_CHAT_MSG=60/minute
+RATE_UPLOAD=20/hour
