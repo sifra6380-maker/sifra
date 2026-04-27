@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    @apply font-sans text-sifra-text antialiased;
+    background: #eef1f8;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold text-sifra-navy;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+
+  /* ── Logo wordmark ─────────────────────────────────── */
+  .sifra-wordmark {
+    font-family: 'Pinyon Script', cursive;
+    @apply text-sifra-navy select-none;
+  }
+
+  /* ── Buttons ───────────────────────────────────────── */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-4 py-2.5
+           text-sm font-semibold transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-offset-2
+           disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.97];
+  }
+  .btn-primary {
+    @apply btn bg-sifra-blue text-white hover:bg-sifra-blueMid
+           shadow-sm hover:shadow-md focus:ring-sifra-blue/40;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-sifra-navy border border-sifra-border
+           hover:bg-sifra-bg hover:border-sifra-blue/40 focus:ring-sifra-blue/20;
+  }
+  .btn-outline {
+    @apply btn border border-sifra-border bg-transparent text-sifra-navy
+           hover:bg-white hover:border-sifra-blue/40 focus:ring-sifra-blue/20;
+  }
+  .btn-danger {
+    @apply btn bg-red-600 text-white hover:bg-red-700 focus:ring-red-500;
+  }
+  .btn-ghost {
+    @apply btn text-sifra-navy hover:bg-white/60;
+  }
+  .btn-lg  { @apply px-6 py-3 text-base rounded-2xl; }
+  .btn-sm  { @apply px-3 py-1.5 text-xs rounded-lg; }
+
+  /* ── Inputs ────────────────────────────────────────── */
+  .input {
+    @apply block w-full rounded-xl border border-sifra-border bg-white
+           px-4 py-2.5 text-sm text-sifra-navy placeholder-sifra-muted
+           shadow-sm transition-colors
+           focus:border-sifra-blue focus:outline-none focus:ring-2 focus:ring-sifra-blue/20
+           disabled:bg-sifra-bg disabled:cursor-not-allowed;
+  }
+  .input-error { @apply border-red-400 focus:border-red-500 focus:ring-red-400/20; }
+  .label  { @apply block text-sm font-medium text-sifra-navy mb-1.5; }
+
+  /* ── Cards ─────────────────────────────────────────── */
+  .card {
+    @apply bg-white rounded-2xl border border-sifra-border shadow-card;
+  }
+  .card-hover {
+    @apply card hover:shadow-card-hover hover:-translate-y-0.5 transition-all duration-200 cursor-pointer;
+  }
+
+  /* ── Badges ────────────────────────────────────────── */
+  .badge       { @apply inline-flex items-center gap-1 rounded-full px-2.5 py-0.5 text-xs font-medium; }
+  .badge-blue  { @apply badge bg-blue-50 text-blue-700 border border-blue-100; }
+  .badge-green { @apply badge bg-green-50 text-green-700 border border-green-100; }
+  .badge-yellow{ @apply badge bg-amber-50 text-amber-700 border border-amber-100; }
+  .badge-red   { @apply badge bg-red-50 text-red-600 border border-red-100; }
+  .badge-gray  { @apply badge bg-sifra-bg text-sifra-muted border border-sifra-border; }
+  .badge-navy  { @apply badge bg-sifra-navy text-white; }
+
+  /* ── Pill (like "Just Launched") ───────────────────── */
+  .pill {
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-1.5
+           bg-white border border-sifra-pillBorder text-sm font-medium text-sifra-navy
+           shadow-sm;
+  }
+
+  /* ── Layout helpers ────────────────────────────────── */
+  .page-container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10; }
+  .section-title  { @apply text-3xl font-bold text-sifra-navy; }
+  .error-text     { @apply text-red-500 text-sm mt-1; }
+
+  /* ── Nav links ─────────────────────────────────────── */
+  .nav-link        { @apply text-sifra-muted hover:text-sifra-navy text-sm font-medium transition-colors; }
+  .nav-link-active { @apply text-sifra-blue font-semibold; }
+}
+
+/* ── Custom scrollbar ──────────────────────────────────── */
+::-webkit-scrollbar        { width: 5px; height: 5px; }
+::-webkit-scrollbar-track  { background: #eef1f8; }
+::-webkit-scrollbar-thumb  { background: #c7ccee; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: #9aa3d4; }
+
+/* ── Skeleton loader ───────────────────────────────────── */
+.skeleton { @apply bg-sifra-bgDeep animate-pulse rounded-xl; }
